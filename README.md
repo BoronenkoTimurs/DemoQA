@@ -3,7 +3,7 @@ Here I'll investigate new features and areas which connected to the WDIO!
 List of commands which I used in directory:
 
 Run you test:
-\*npx wdio
+*npx wdio
 
 1.wdio-playground/
 *npm init -y
