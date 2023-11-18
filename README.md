@@ -8,5 +8,6 @@ Run you test:
 1.wdio-playground
 - npm init -y
 - npm install @wdio/cli
+- npm init wdio .
 - npm install --save-dev chromedriver
 - npm install wdio-chromedriver-service --save-dev
