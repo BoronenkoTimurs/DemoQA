@@ -5,7 +5,7 @@ List of commands which I used in directory:
 Run you test:
 - npx wdio
 
-1.wdio-playground/
+1.wdio-playground
 - npm init -y
 - npm install @wdio/cli
 - npm install --save-dev chromedriver
