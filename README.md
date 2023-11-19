@@ -1,6 +1,6 @@
 Here I'll investigate new features and areas which connected to the WDIO!
 
-List of commands which I used in directory:
+List of commands which I used in this project and which you can use as well if you want to interact with this project:
 
 Run you test:
 - npx wdio
@@ -10,7 +10,7 @@ Add Allure reporter:
 - npm i allure-commandline
 - allure generate allure-results && allure open
 
-1.wdio-playground
+1. wdio-playground
 - npm init -y
 - npm install @wdio/cli
 - npm init wdio .
