@@ -16,3 +16,9 @@ Setup commands in directory: wdio-playground/
 - npm init wdio .
 - npm install --save-dev chromedriver
 - npm install wdio-chromedriver-service --save-dev
+
+In the case of issue with git push error(main -> main (fetch first)) use this:
+- git fetch origin
+- git rebase origin/main
+- git merge origin/main
+- git push origin main
