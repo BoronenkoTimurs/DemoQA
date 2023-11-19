@@ -1,7 +1,7 @@
 describe("Testing of Check box example", () => {
   it("+, -, arrow left works properly", async () => {
     // Functions
-    async function existingDestkop() {
+    async function checkDestkopBox() {
       const TEXT = "span=You have selected :";
 
       $("span=Desktop").click();
@@ -24,6 +24,6 @@ describe("Testing of Check box example", () => {
     await $(".rct-icon-expand-all").click();
 
     // Checking
-    await browser.call(existingDestkop);
+    await browser.call(checkDestkopBox);
   });
 });
