@@ -1,5 +1,3 @@
-const assert = require("assert");
-
 const NAME = "p[id=name]";
 const EMAIL = "p[id=email]";
 const CURRENTADDRESS = "p[id=currentAddress]";

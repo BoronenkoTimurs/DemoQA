@@ -2,13 +2,13 @@ describe("Testing of Check box example", () => {
   it("+, -, arrow left works properly", async () => {
     // Functions
     async function checkDestkopBox() {
-      const TEXT = "span=You have selected :";
+      await $("span=Desktop").click();
+      await expect($$(".rct-text")[0].$(".rct-icon-half-check"));
 
-      $("span=Desktop").click();
-      expect($$(".rct-text")[0].$(".rct-icon-half-check")).toBeExisting();
-      expect($(TEXT).toHaveAttribute("span=desktop")).toBeExisting();
-      expect($(TEXT).toHaveAttribute("span=notes")).toBeExisting();
-      expect($(TEXT).toHaveAttribute("span=commands")).toBeExisting();
+      await expect($("span=You have selected :")).toBeExisting();
+      await expect($("span=desktop")).toBeExisting();
+      await expect($("span=notes")).toBeExisting();
+      await expect($("span=commands")).toBeExisting();
     }
 
     // Navigation
