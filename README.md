@@ -10,7 +10,7 @@ Add Allure reporter:
 - npm i allure-commandline
 - allure generate allure-results && allure open
 
-Setup commands in directory: wdio-playground
+Setup commands in directory: wdio-playground/
 - npm init -y
 - npm install @wdio/cli
 - npm init wdio .
