@@ -3,8 +3,8 @@ describe("Testing of Check box example", () => {
     // Functions
     async function checkDestkopBox() {
       await $("span=Desktop").click();
-      await expect($$(".rct-text")[0].$(".rct-icon-half-check"));
 
+      await expect($$(".rct-text")[0].$(".rct-icon-half-check"));
       await expect($("span=You have selected :")).toBeExisting();
       await expect($("span=desktop")).toBeExisting();
       await expect($("span=notes")).toBeExisting();

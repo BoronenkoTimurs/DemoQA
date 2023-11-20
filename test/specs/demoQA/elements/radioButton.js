@@ -9,8 +9,11 @@ describe("Testing of Radio Button example", () => {
     await expect($("div=No").toHaveElementClass("disabled"));
 
     await $("div=Yes").click();
+    await $("input[id=yesRadio]").isFocused();
     await expect($("span=Yes")).toBeExisting();
+
     await $("div=Impressive").click();
+    await $("input[id=impressiveRadio]").isFocused();
     await expect($("span=Impressive")).toBeExisting();
   });
 });

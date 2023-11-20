@@ -24,6 +24,8 @@ describe("Testing of Text box example", () => {
     await $(SUBMITBUTTON).click();
 
     // Checking
+    await expect($(".field-error")).not.toBeExisting();
+    await expect($("div[id=output]")).toBeDisplayed();
     await expect($(NAME)).toHaveText("Name:test123");
     await expect($(EMAIL)).toHaveText("Email:test123@gmail.com");
     await expect($(CURRENTADDRESS)).toHaveText("Current Address :Daugavpils");
