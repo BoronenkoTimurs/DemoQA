@@ -1,48 +1,31 @@
-const NAME = "p[id=name]";
-const EMAIL = "p[id=email]";
-const CURRENTADDRESS = "p[id=currentAddress]";
-const PERMANENTADDRESS = "p[id=permanentAddress]";
+const TextBox = require("./pageObjects/TextBox.page");
+const textBox = new TextBox();
 
-const INPUTNAME = "input[type=text]";
-const INPUTEMAIL = "input[type=email]";
-const INPUTCURRENTADDRESS = "#currentAddress";
-const INPUTPERMANENTADDRESS = "#permanentAddress";
-const SUBMITBUTTON = "button[id=submit]";
+const validName = "test123";
+const validEmail = "test123@gmail.com";
+const validCurrent = "Daugavpils";
+const validPermanent = "Riga";
 
 describe("Testing of Text box example", () => {
-  it("fill the form with valid data", async () => {
+  beforeEach(async () => {
     // Navigation
-    await browser.url("./");
-    await $("h5=Elements").click();
-    await $$("li")[0].click();
-
+    await browser.url("./text-box");
+  });
+  it("fill the form with valid data", async () => {
     // Set data
-    await $(INPUTNAME).setValue("test123");
-    await $(INPUTEMAIL).setValue("test123@gmail.com");
-    await $(INPUTCURRENTADDRESS).setValue("Daugavpils");
-    await $(INPUTPERMANENTADDRESS).setValue("Riga");
-    await $(SUBMITBUTTON).click();
+    await textBox.login(validName, validEmail, validCurrent, validPermanent);
 
     // Checking
-    await expect($(".field-error")).not.toBeExisting();
-    await expect($("div[id=output]")).toBeDisplayed();
-    await expect($(NAME)).toHaveText("Name:test123");
-    await expect($(EMAIL)).toHaveText("Email:test123@gmail.com");
-    await expect($(CURRENTADDRESS)).toHaveText("Current Address :Daugavpils");
-    await expect($(PERMANENTADDRESS)).toHaveText("Permananet Address :Riga");
+    await textBox.check(validName, validEmail, validCurrent, validPermanent);
   });
   it("fill the form with not valid data", async () => {
-    // Navigation
-    await browser.url("./");
-    await $("h5=Elements").click();
-    await $("span=Text Box").click();
-
     // Set values
-    await $(INPUTNAME).setValue("test123");
-    await $(INPUTEMAIL).setValue("invalidEmail");
-    await $(INPUTCURRENTADDRESS).setValue("Daugavpils");
-    await $(INPUTPERMANENTADDRESS).setValue("Riga");
-    await $(SUBMITBUTTON).click();
+    await textBox.login(
+      validName,
+      "invalidEmail",
+      validCurrent,
+      validPermanent
+    );
 
     // Checking
     await expect($(".field-error")).toBeExisting();
