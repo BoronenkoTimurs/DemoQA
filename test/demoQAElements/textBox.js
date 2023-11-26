@@ -1,4 +1,4 @@
-const TextBox = require("./pageObjects/TextBox.page");
+const TextBox = require("../pageObjects/TextBox.page");
 const textBox = new TextBox();
 
 const validName = "test123";
