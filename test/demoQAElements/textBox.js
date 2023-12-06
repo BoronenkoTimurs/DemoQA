@@ -1,3 +1,5 @@
+import { browser, $ } from "@wdio/globals";
+
 const TextBox = require("../pageObjects/TextBox.page");
 const textBox = new TextBox();
 
@@ -8,26 +10,25 @@ const validPermanent = "Riga";
 
 describe("Testing of Text box example", () => {
   beforeEach(async () => {
-    // Navigation
     await browser.url("./text-box");
   });
   it("fill the form with valid data", async () => {
-    // Set data
     await textBox.login(validName, validEmail, validCurrent, validPermanent);
-
-    // Checking
-    await textBox.check(validName, validEmail, validCurrent, validPermanent);
+    await textBox.checkCredentials(
+      validName,
+      validEmail,
+      validCurrent,
+      validPermanent
+    );
   });
   it("fill the form with not valid data", async () => {
-    // Set values
     await textBox.login(
       validName,
       "invalidEmail",
       validCurrent,
       validPermanent
     );
-
-    // Checking
     await expect($(".field-error")).toBeExisting();
   });
+  it("asd", async () => {});
 });

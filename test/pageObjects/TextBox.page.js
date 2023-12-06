@@ -34,7 +34,7 @@ class TextBox {
     await this.$inputPermanent.setValue(permanent);
     await this.$submit.click();
   }
-  async check(name, email, current, permanent) {
+  async checkCredentials(name, email, current, permanent) {
     await expect(this.$answerName).toHaveText(new RegExp(".*" + name));
     await expect(this.$answerEmail).toHaveText(new RegExp(".*" + email));
     await expect(this.$answerCurrent).toHaveText(new RegExp(".*" + current));
